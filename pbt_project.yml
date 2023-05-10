@@ -25,25 +25,42 @@ functions:
   expressions: {}
 subgraphs: {}
 sqlModels:
-  .prophecy/metadata/sqlmodels/stg_customers:
-    name: stg_customers
-    description: null
-    author: mei@prophecy.io
-    files:
-    - .prophecy/ide/models/stg_customers.json
-    - jshopdmeosx3mDQpb/models/staging/stg_customers.sql
-    sqlDependencies:
-      models: []
-      datasets: []
-    createdAt: '2023-04-01 00:45:01'
-    modifiedAt: '2023-04-01 00:45:01'
   .prophecy/metadata/sqlmodels/stg_orders:
     name: stg_orders
     description: null
     author: mei@prophecy.io
     files:
+    - models/staging/stg_orders.sql
     - .prophecy/ide/models/stg_orders.json
-    - jshopdmeosx3mDQpb/models/staging/stg_orders.sql
+    - models/staging/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-04-01 00:45:01'
+    modifiedAt: '2023-04-01 00:45:01'
+  .prophecy/metadata/sqlmodels/orders:
+    name: orders
+    description: This table has basic information about orders, as well as some derived
+      facts based on payments
+    author: mei@prophecy.io
+    files:
+    - models/orders.sql
+    - .prophecy/ide/models/orders.json
+    - models/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-04-01 00:45:01'
+    modifiedAt: '2023-04-01 00:45:01'
+  .prophecy/metadata/sqlmodels/customers:
+    name: customers
+    description: This table has basic information about a customer, as well as some
+      derived facts based on a customer's orders
+    author: mei@prophecy.io
+    files:
+    - models/customers.sql
+    - .prophecy/ide/models/customers.json
+    - models/schema.yml
     sqlDependencies:
       models: []
       datasets: []
@@ -54,37 +71,55 @@ sqlModels:
     description: null
     author: mei@prophecy.io
     files:
+    - models/staging/stg_payments.sql
     - .prophecy/ide/models/stg_payments.json
-    - jshopdmeosx3mDQpb/models/staging/stg_payments.sql
+    - models/staging/schema.yml
     sqlDependencies:
       models: []
       datasets: []
     createdAt: '2023-04-01 00:45:01'
     modifiedAt: '2023-04-01 00:45:01'
-  .prophecy/metadata/sqlmodels/orders:
-    name: orders
+  .prophecy/metadata/sqlmodels/stg_customers:
+    name: stg_customers
     description: null
     author: mei@prophecy.io
     files:
-    - .prophecy/ide/models/orders.json
-    - jshopdmeosx3mDQpb/models/orders.sql
+    - models/staging/stg_customers.sql
+    - .prophecy/ide/models/stg_customers.json
+    - models/staging/schema.yml
     sqlDependencies:
       models: []
       datasets: []
     createdAt: '2023-04-01 00:45:01'
     modifiedAt: '2023-04-01 00:45:01'
-  .prophecy/metadata/sqlmodels/customers:
-    name: customers
+sqlMacros: {}
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/raw_customers:
+    name: raw_customers
     description: null
-    author: mei@prophecy.io
+    author: mei+onboardingdemo@prophecy.io
     files:
-    - .prophecy/ide/models/customers.json
-    - jshopdmeosx3mDQpb/models/customers.sql
-    sqlDependencies:
-      models: []
-      datasets: []
-    createdAt: '2023-04-01 00:45:01'
-    modifiedAt: '2023-04-01 00:45:01'
+    - seeds/raw_customers.csv
+    createdAt: '2023-05-10 02:11:38'
+    modifiedAt: '2023-05-10 02:11:38'
+  .prophecy/metadata/sqlseeds/raw_orders:
+    name: raw_orders
+    description: null
+    author: mei+onboardingdemo@prophecy.io
+    files:
+    - seeds/raw_orders.csv
+    createdAt: '2023-05-10 02:11:38'
+    modifiedAt: '2023-05-10 02:11:38'
+  .prophecy/metadata/sqlseeds/raw_payments:
+    name: raw_payments
+    description: null
+    author: mei+onboardingdemo@prophecy.io
+    files:
+    - seeds/raw_payments.csv
+    createdAt: '2023-05-10 02:11:38'
+    modifiedAt: '2023-05-10 02:11:38'
+sqlSources: {}
+sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
   description: kishore@simpledatalabs.com
